@@ -1,0 +1,16 @@
+[package]
+name = "corvid-ai"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.89"
+license = "MIT"
+description = "Tiny synchronous multi-provider LLM client for the CorvidLabs stack: Anthropic, OpenAI-compatible, and Gemini over plain HTTP. No CLI, no agent runtime."
+repository = "https://github.com/CorvidLabs/corvid-ai"
+keywords = ["llm", "ai", "anthropic", "openai", "gemini"]
+categories = ["api-bindings"]
+
+[dependencies]
+ureq = "3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
