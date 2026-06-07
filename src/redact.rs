@@ -1,7 +1,7 @@
 //! Minimal secret redaction for error text.
 //!
 //! API keys ride in headers, not URLs or bodies we surface, so the blast radius
-//! is small — but transport errors can occasionally echo a `Bearer <token>` or a
+//! is small, but transport errors can occasionally echo a `Bearer <token>` or a
 //! `?key=<token>` query param. This scrubs those without pulling in a regex dep.
 
 /// Replace `Bearer <token>` and `key=<token>` occurrences with a placeholder.

@@ -1,5 +1,5 @@
 # Dogfoods fledge for the dev loop. fledge is a CLI dev tool here, NOT a Cargo
-# dependency — corvid-ai stays a dependency-free leaf crate.
+# dependency. corvid-ai stays a dependency-free leaf crate.
 
 [tasks.build]
 cmd = "cargo build"

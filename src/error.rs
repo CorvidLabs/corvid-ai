@@ -35,7 +35,7 @@ pub enum Error {
         provider: String,
         /// The HTTP status code.
         status: u16,
-        /// The request URL (never contains the API key — keys ride in headers).
+        /// The request URL (never contains the API key, since keys ride in headers).
         url: String,
     },
 

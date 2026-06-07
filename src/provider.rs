@@ -136,7 +136,7 @@ fn build_agent(timeout: Duration) -> ureq::Agent {
 
 // ---- Anthropic ----------------------------------------------------------
 
-/// Build the Anthropic Messages request body. Pure — unit tested without a network.
+/// Build the Anthropic Messages request body. Pure, unit tested without a network.
 pub(crate) fn anthropic_body(model: &str, c: &Completion) -> serde_json::Value {
     let mut body = serde_json::json!({
         "model": model,

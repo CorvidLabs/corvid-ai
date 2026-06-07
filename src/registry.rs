@@ -2,7 +2,7 @@
 //!
 //! Every entry maps a provider *name* to a wire protocol ([`Kind`]), a default
 //! `base_url`, an optional default model, and the environment variable that
-//! supplies its API key. Adding an OpenAI-compatible gateway is **one row** —
+//! supplies its API key. Adding an OpenAI-compatible gateway is **one row**,
 //! no new HTTP code.
 //!
 //! Model defaults are best-effort and drift over time; treat them as sane
@@ -11,13 +11,13 @@
 /// The HTTP wire protocol a provider speaks.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Kind {
-    /// Anthropic Messages API — `x-api-key`, `POST {base_url}/v1/messages`.
+    /// Anthropic Messages API. `x-api-key`, `POST {base_url}/v1/messages`.
     Anthropic,
-    /// OpenAI-compatible Chat Completions — `Authorization: Bearer`,
+    /// OpenAI-compatible Chat Completions. `Authorization: Bearer`,
     /// `POST {base_url}/chat/completions`. The workhorse: OpenAI, OpenRouter,
     /// Groq, DeepSeek, Mistral, xAI, Together, local servers, Ollama.
     OpenAiCompatible,
-    /// Google Gemini — `x-goog-api-key`,
+    /// Google Gemini. `x-goog-api-key`,
     /// `POST {base_url}/models/{model}:generateContent`.
     Gemini,
 }

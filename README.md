@@ -6,12 +6,12 @@ A leaf crate (`ureq` + `serde`, no async runtime, no CLI shell-out) that talks t
 any LLM API through three HTTP wire shapes:
 
 - **Anthropic** Messages API (`x-api-key`)
-- **OpenAI-compatible** Chat Completions (`Authorization: Bearer`) — the
+- **OpenAI-compatible** Chat Completions (`Authorization: Bearer`), the
   workhorse: OpenAI, OpenRouter, Groq, DeepSeek, Mistral, xAI, Together, local
   servers, and Ollama
 - **Google Gemini** `generateContent` (`x-goog-api-key`)
 
-Adding an OpenAI-compatible gateway is **one registry row** — no new HTTP code.
+Adding an OpenAI-compatible gateway is **one registry row**, no new HTTP code.
 
 It is designed to be the shared provider layer for sync CorvidLabs tools
 (`fledge`, `spec-sync`). The dependency arrow points **one way**: those tools

@@ -4,12 +4,12 @@
 //! Three HTTP wire shapes cover the field:
 //!
 //! - **Anthropic** Messages API (`x-api-key`)
-//! - **OpenAI-compatible** Chat Completions (`Authorization: Bearer`) — the
+//! - **OpenAI-compatible** Chat Completions (`Authorization: Bearer`), the
 //!   workhorse: OpenAI, OpenRouter, Groq, DeepSeek, Mistral, xAI, Together,
 //!   local servers, and Ollama
 //! - **Google Gemini** `generateContent` (`x-goog-api-key`)
 //!
-//! Adding an OpenAI-compatible gateway is one [registry](crate::registry) row —
+//! Adding an OpenAI-compatible gateway is one [registry](crate::registry) row,
 //! no new HTTP code. There is **no CLI shell-out and no async runtime**: this is
 //! a leaf crate (`ureq` + `serde`) meant to be shared by sync tools like
 //! `fledge` and `spec-sync`.
