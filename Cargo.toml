@@ -8,6 +8,7 @@ description = "Tiny synchronous multi-provider LLM client for the CorvidLabs sta
 repository = "https://github.com/CorvidLabs/corvid-ai"
 keywords = ["llm", "ai", "anthropic", "openai", "gemini"]
 categories = ["api-bindings"]
+exclude = ["/specs", "/.specsync", "/.github", "/fledge.toml"]
 
 [dependencies]
 ureq = "3"

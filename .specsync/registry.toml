@@ -1,0 +1,8 @@
+[registry]
+name = "corvid-ai"
+
+[specs]
+provider = "specs/provider/provider.spec.md"
+registry = "specs/registry/registry.spec.md"
+config = "specs/config/config.spec.md"
+error = "specs/error/error.spec.md"
