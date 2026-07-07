@@ -1,5 +1,7 @@
 # corvid-ai
 
+![spec coverage](https://img.shields.io/endpoint?url=https://corvidlabs.github.io/corvid-ai/badges/coverage.json)
+
 > Tiny, synchronous, multi-provider LLM client for the CorvidLabs stack.
 
 A leaf crate (`ureq` + `serde`, no async runtime, no CLI shell-out) that talks to
