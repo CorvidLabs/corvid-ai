@@ -1,0 +1,94 @@
+# Atlas spec coverage
+#
+# corvid-ai has no site to build, so this Pages workflow exists solely to render
+# the repo's spec-coverage badges + cards with atlas and publish them to GitHub
+# Pages on every push to main. That keeps the README badge and the CorvidLabs
+# coverage board live. It is the repo's only Pages workflow, so it owns the
+# `concurrency: pages` group outright.
+
+name: Deploy Atlas coverage to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "specs/**"
+      - "Cargo.toml"
+      - ".atlasignore"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+# Run the bundled Node-20 JavaScript actions on Node 24 to silence GitHub's
+# Node-20 end-of-life deprecation warnings.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Render coverage
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # atlas reads git history for spec activity
+
+      # Cache the compiled fledge-atlas CLI so this is a fast no-op on a cache
+      # hit instead of a ~3-5 min cargo build. Keyed to the exact commit the `v1`
+      # tag resolves to, so moving v1 invalidates the cache automatically.
+      - name: Resolve pinned atlas commit (cache key)
+        id: atlasref
+        run: echo "sha=$(git ls-remote https://github.com/CorvidLabs/fledge-plugin-atlas v1 | cut -f1)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache the fledge-atlas CLI
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin/fledge-atlas
+            ~/.cargo/.crates.toml
+            ~/.cargo/.crates2.json
+          key: fledge-atlas-${{ runner.os }}-${{ steps.atlasref.outputs.sha }}
+
+      - name: Render atlas coverage badges
+        uses: CorvidLabs/fledge-plugin-atlas@v1
+        with:
+          path: .
+          output-dir: _site/badges
+          components: "coverage langmix treemap sunburst"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
+    steps:
+      # GitHub Pages' backend occasionally returns a transient "Deployment failed,
+      # try again later". Attempt once, then retry once so a flake does not leave
+      # the badges stale until the next push.
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Deploy to GitHub Pages (retry transient failures)
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4

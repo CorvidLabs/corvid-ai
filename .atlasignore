@@ -1,0 +1,8 @@
+# corvid-ai atlas coverage scope: the specs govern the crate source (src/).
+
+# Build output
+/target/
+
+# Minified / generated
+*.min.js
+*.min.css
