@@ -6,8 +6,9 @@ spec: error.spec.md
 
 ### Unit Tests
 
-- <!-- List unit test scenarios. -->
+- Format every error variant with its identifying context.
+- Verify secrets and bearer tokens are absent after redaction.
 
 ### Integration Tests
 
-- <!-- List integration test scenarios. -->
+- Exercise errors produced by configuration resolution and response parsing.

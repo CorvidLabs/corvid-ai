@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance-for-corvid-ai",
+  "slug": "adopt-specsync-5-0-1-and-trust-1-0-0-governance-for-corvid-ai",
+  "title": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance for corvid-ai",
+  "description": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance for corvid-ai",
+  "kind": "migration",
+  "state": "draft",
+  "base_commit": "e18ff01dce558b5c6f51dd2673daa15282a79dc8",
+  "created_at": 1783883539,
+  "updated_at": 1783883560,
+  "affected_specs": [
+    "config",
+    "error",
+    "provider",
+    "registry"
+  ],
+  "affected_paths": [
+    "src/",
+    "Cargo.toml",
+    "Cargo.lock",
+    "fledge.toml",
+    "README.md",
+    ".github/",
+    ".specsync/",
+    "specs/",
+    ".trust.toml",
+    ".augur.toml",
+    ".attest.json",
+    "AGENTS.md"
+  ],
+  "no_spec_change": false,
+  "no_spec_change_rationale": null,
+  "acceptance_criteria": [
+    "SpecSync strict check passes at 100 percent coverage; all four agent integrations report installed; fledge trust doctor and native verification pass; existing Rust CI and Atlas Pages workflows remain intact; the additive immutable Trust gate runs on every pull request"
+  ],
+  "selected_artifacts": [
+    "context",
+    "research",
+    "design",
+    "plan",
+    "tasks",
+    "testing",
+    "docs"
+  ],
+  "dependencies": [],
+  "answers": {
+    "architecture_risk": "yes",
+    "public_contract": "no"
+  }
+}

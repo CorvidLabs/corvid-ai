@@ -4,6 +4,6 @@ spec: config.spec.md
 
 ## Tasks
 
-- [ ] Write spec
-- [ ] Implement module
-- [ ] Write tests
+- [x] Define resolution precedence and provider-specific key behavior.
+- [x] Implement settings resolution and typed failures.
+- [x] Cover defaults, overrides, missing values, and unknown providers.

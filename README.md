@@ -60,7 +60,7 @@ dependencies):
 fledge run test     # cargo test
 fledge run lint     # cargo clippy --all-targets -- -D warnings
 fledge run ci       # lint + fmt + test
-spec-sync check     # specs are the source of truth
+specsync check      # specs are the source of truth
 ```
 
 ## License

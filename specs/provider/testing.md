@@ -6,8 +6,11 @@ spec: provider.spec.md
 
 ### Unit Tests
 
-- <!-- List unit test scenarios. -->
+- Verify bodies, headers, URLs, system prompts, token limits, and response text
+  extraction for all three protocols.
+- Cover malformed, empty, non-success, and redacted transport failures.
 
 ### Integration Tests
 
-- <!-- List integration test scenarios. -->
+- Exercise each provider against a local deterministic HTTP fixture; live API
+  calls and credentials are not required by the default gate.

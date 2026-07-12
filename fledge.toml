@@ -22,5 +22,9 @@ cmd = "cargo test"
 deps = ["fmt", "lint"]
 description = "Full local gate: fmt + lint + test"
 
+[lanes.verify]
+description = "Format, lint, and test the corvid-ai crate"
+steps = ["fmt", "lint", "test"]
+
 [release]
 files = ["Cargo.toml"]
