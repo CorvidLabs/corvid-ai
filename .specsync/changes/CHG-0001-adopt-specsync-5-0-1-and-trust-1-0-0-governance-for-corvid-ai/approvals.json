@@ -1,3 +1,85 @@
 {
-  "approvals": []
+  "approvals": [
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1784003677,
+      "digest": "5290764b7bedea1c16bd46e42f90d733d4882bc94502be3f60f2c5ab5e6b1bed",
+      "note": "Definition approved after stable requirement deltas and evidence mappings were completed."
+    },
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1784003762,
+      "digest": "26154f27308624cf837a96983d487770907e41a0f5db6466f0057806e633c1e5",
+      "note": "Definition re-approved after exact requirement evidence indexing."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1784003778,
+      "digest": "7fd3d8484117b705dd610087958158e68db01ba036140b550cc1dde983451f49",
+      "note": "Closing approval after native verification and exact requirement evidence passed."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1784003866,
+      "digest": "9338b7a98d23b53ff38e6ef5e3764c5bd14c399992cba1cc1892ee7af70641e2",
+      "note": "Fresh closing approval after native verification on the final accepted contract."
+    }
+  ],
+  "reopenings": [
+    {
+      "schema_version": 1,
+      "change_id": "CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance-for-corvid-ai",
+      "actor": "user:0xLeif",
+      "reason": "Later accepted canonical coverage changes updated the final delivery inputs and require fresh native evidence.",
+      "timestamp": 1784003865,
+      "from_state": "accepted",
+      "to_state": "verifying",
+      "superseded_approval": {
+        "gate": "acceptance",
+        "actor": "user:0xLeif",
+        "timestamp": 1784003778,
+        "digest": "7fd3d8484117b705dd610087958158e68db01ba036140b550cc1dde983451f49",
+        "note": "Closing approval after native verification and exact requirement evidence passed."
+      },
+      "prior_verification": {
+        "timestamp": 1784003773,
+        "commit": "d8a5f794531105eb75b0c4e836794fb11e6aea0c",
+        "contract_digest": "26154f27308624cf837a96983d487770907e41a0f5db6466f0057806e633c1e5",
+        "workspace_digest": "3211b51be63376515760468c05f9d3d1c064c7dca952c32e2f8185ceca2cefb1",
+        "acceptance_input_digest": "235e7d9ab20fbee648d6e1bcd02f033ec81401729203efeb1a48291e0154232b",
+        "passed": true,
+        "commands": [
+          {
+            "command": "fledge lanes run verify",
+            "success": true,
+            "exit_code": 0
+          }
+        ],
+        "requirement_ids": [
+          "REQ-config-001",
+          "REQ-config-002",
+          "REQ-config-003",
+          "REQ-config-004",
+          "REQ-error-001",
+          "REQ-error-002",
+          "REQ-error-003",
+          "REQ-provider-001",
+          "REQ-provider-002",
+          "REQ-provider-003",
+          "REQ-provider-004",
+          "REQ-provider-005",
+          "REQ-registry-001",
+          "REQ-registry-002",
+          "REQ-registry-003",
+          "REQ-registry-004"
+        ]
+      },
+      "stale_acceptance_input_digest": "235e7d9ab20fbee648d6e1bcd02f033ec81401729203efeb1a48291e0154232b",
+      "current_acceptance_input_digest": "e67a3cfe173dc89ca6630c7eb9957990688333d5d940e8735bdf229dede9e12e"
+    }
+  ]
 }

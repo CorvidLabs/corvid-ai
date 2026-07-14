@@ -1,0 +1,22 @@
+{
+  "timestamp": 1784003814,
+  "commit": "d8a5f794531105eb75b0c4e836794fb11e6aea0c",
+  "contract_digest": "9c9809d184643d95a50b48769077d7d50719f44a39db0b251f2e0a928b623281",
+  "workspace_digest": "daf0d54c856700ae83d3fb378484bd13ebf2575f78c379be28d8f6570a05deab",
+  "acceptance_input_digest": "b6b2a3c3341aeb926a1d6a85ceb7e7bd7e331621b4cef740c78ad0f3187d23b6",
+  "passed": true,
+  "commands": [
+    {
+      "command": "fledge lanes run verify",
+      "success": true,
+      "exit_code": 0
+    }
+  ],
+  "requirement_ids": [
+    "REQ-crate-api-001",
+    "REQ-crate-api-002",
+    "REQ-redaction-001",
+    "REQ-redaction-002",
+    "REQ-redaction-003"
+  ]
+}

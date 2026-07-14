@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "CHG-0003-complete-the-canonical-corvid-ai-contract-for-the-crate-facade-and-secret-redact",
+  "slug": "complete-the-canonical-corvid-ai-contract-for-the-crate-facade-and-secret-redact",
+  "title": "Complete the canonical corvid-ai contract for the crate facade and secret redaction module",
+  "description": "Complete the canonical corvid-ai contract for the crate facade and secret redaction module",
+  "kind": "documentation",
+  "state": "accepted",
+  "canonical_applied": true,
+  "base_commit": "d8a5f794531105eb75b0c4e836794fb11e6aea0c",
+  "created_at": 1784003349,
+  "updated_at": 1784003822,
+  "affected_specs": [
+    "crate-api",
+    "redaction"
+  ],
+  "affected_paths": [
+    "src/lib.rs",
+    "src/redact.rs",
+    "specs/crate-api/crate-api.spec.md",
+    "specs/crate-api/requirements.md",
+    "specs/crate-api/testing.md",
+    "specs/redaction/redaction.spec.md",
+    "specs/redaction/requirements.md",
+    "specs/redaction/testing.md",
+    ".specsync/change-sequence.json"
+  ],
+  "no_spec_change": false,
+  "no_spec_change_rationale": null,
+  "acceptance_criteria": [
+    "The crate facade and redaction modules have complete active specs; stable requirements map to existing Rust tests and doctests; released SpecSync 5.0.1 reports six of six Rust files and 100% file coverage; no Rust source bytes change"
+  ],
+  "selected_artifacts": [
+    "context",
+    "docs",
+    "design",
+    "tasks"
+  ],
+  "dependencies": [],
+  "answers": {
+    "architecture_risk": "no",
+    "public_contract": "no"
+  }
+}

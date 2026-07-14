@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "CHG-0004-make-the-four-existing-corvid-ai-public-api-tables-parser-complete-without-chang",
+  "slug": "make-the-four-existing-corvid-ai-public-api-tables-parser-complete-without-chang",
+  "title": "Make the four existing corvid-ai public API tables parser-complete without changing their contracts",
+  "description": "Make the four existing corvid-ai public API tables parser-complete without changing their contracts",
+  "kind": "documentation",
+  "state": "accepted",
+  "canonical_applied": true,
+  "base_commit": "d8a5f794531105eb75b0c4e836794fb11e6aea0c",
+  "created_at": 1784003516,
+  "updated_at": 1784003831,
+  "affected_specs": [
+    "config",
+    "error",
+    "provider",
+    "registry"
+  ],
+  "affected_paths": [
+    "specs/config/config.spec.md",
+    "specs/error/error.spec.md",
+    "specs/provider/provider.spec.md",
+    "specs/registry/registry.spec.md",
+    ".specsync/change-sequence.json"
+  ],
+  "no_spec_change": false,
+  "no_spec_change_rationale": null,
+  "acceptance_criteria": [
+    "Released SpecSync 5.0.1 documents every detected export in config; error; provider; and registry with zero strict warnings while preserving the existing contract text and Rust source"
+  ],
+  "selected_artifacts": [
+    "context",
+    "docs",
+    "design",
+    "tasks"
+  ],
+  "dependencies": [
+    "CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance-for-corvid-ai"
+  ],
+  "answers": {
+    "architecture_risk": "no",
+    "public_contract": "no"
+  }
+}

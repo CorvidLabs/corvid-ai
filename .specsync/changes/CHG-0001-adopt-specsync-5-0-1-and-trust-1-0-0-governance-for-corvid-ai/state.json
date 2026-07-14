@@ -5,10 +5,11 @@
   "title": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance for corvid-ai",
   "description": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance for corvid-ai",
   "kind": "migration",
-  "state": "draft",
+  "state": "accepted",
+  "canonical_applied": true,
   "base_commit": "e18ff01dce558b5c6f51dd2673daa15282a79dc8",
   "created_at": 1783883539,
-  "updated_at": 1783883560,
+  "updated_at": 1784003866,
   "affected_specs": [
     "config",
     "error",

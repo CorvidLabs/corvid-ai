@@ -1,0 +1,26 @@
+{
+  "approvals": [
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1784003610,
+      "digest": "935a4654b1ea2c65b23249381762cd49ac1990a7e639b544effcba96a960269d",
+      "note": "Definition approved after exact released-parser export inventory."
+    },
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1784003805,
+      "digest": "2dc5cfce1ea12c9d995af4831ddb8346383b032a9fd6d945106926462249e91e",
+      "note": "Definition re-approved after its ordered predecessor was accepted."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1784003831,
+      "digest": "2749150858aa9ae821dcd23b148badcd7369be23795563bd1be913840695e468",
+      "note": "Closing approval after fresh native verification on the accepted predecessor contract."
+    }
+  ],
+  "reopenings": []
+}

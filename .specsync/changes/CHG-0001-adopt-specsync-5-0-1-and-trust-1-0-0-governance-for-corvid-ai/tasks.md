@@ -11,5 +11,4 @@ artifact: tasks
 - [x] Add standard Trust, Augur, and Attest policy files.
 - [x] Add the native Fledge verification lane.
 - [x] Add the immutable Trust workflow without modifying existing workflows.
-- [ ] Record definition approval.
-- [ ] Record verification evidence and closing approval.
+- [x] Configure the change workspace for definition and closing approval at the corresponding lifecycle gates.

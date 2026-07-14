@@ -1,6 +1,6 @@
 ---
 id: CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance-for-corvid-ai
-state: draft
+state: accepted
 type: migration
 base_commit: e18ff01dce558b5c6f51dd2673daa15282a79dc8
 ---
