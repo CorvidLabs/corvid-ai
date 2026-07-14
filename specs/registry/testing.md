@@ -6,8 +6,9 @@ spec: registry.spec.md
 
 ### Unit Tests
 
-- <!-- List unit test scenarios. -->
+- Verify trimmed, case-insensitive lookup and unknown-name behavior.
+- Assert required row metadata, protocol mappings, and known-name ordering.
 
 ### Integration Tests
 
-- <!-- List integration test scenarios. -->
+- Resolve representative registry rows through the configuration module.

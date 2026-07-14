@@ -4,12 +4,15 @@ spec: error.spec.md
 
 ## Context
 
-<!-- Describe the context and motivation for this module. -->
+Consumers need actionable failure categories without risking credential
+exposure in logs or user-facing messages.
 
 ## Related Modules
 
-- <!-- List related modules or specs. -->
+- `config` constructs resolution failures.
+- `provider` constructs request and response failures.
 
 ## Design Decisions
 
-- <!-- Document key design decisions and their rationale. -->
+- Keep provider, status, and URL context typed.
+- Redact transport details before constructing displayable errors.

@@ -1,6 +1,6 @@
 ---
 module: registry
-version: 1
+version: 3
 status: active
 files:
   - src/registry.rs
@@ -29,25 +29,18 @@ guarantees.
 | `lookup` | Find a `ProviderSpec` by case-insensitive, trimmed name |
 | `known_names` | Comma-separated list of every registered name (for errors) |
 
-### Structs & Enums
+### Exported Types
 
 | Type | Description |
 |------|-------------|
 | `Kind` | Wire protocol: `Anthropic`, `OpenAiCompatible`, `Gemini` |
 | `ProviderSpec` | One registry row: `name`, `kind`, `base_url`, `default_model`, `env_var` |
 
-### Constants
+### Exported Constants
 
 | Const | Description |
 |-------|-------------|
 | `REGISTRY` | The slice of built-in `ProviderSpec` rows |
-
-### Functions
-
-| Function | Signature | Description |
-|----------|-----------|-------------|
-| `lookup` | `(&str) -> Option<&'static ProviderSpec>` | Case-insensitive name lookup |
-| `known_names` | `() -> String` | All names, comma-separated |
 
 ## Invariants
 
@@ -86,3 +79,5 @@ Then it returns None and known_names lists the valid choices
 | Version | Date | Changes |
 |---------|------|---------|
 | 1 | 2026-06-07 | Initial spec: 10 built-in providers across three wire protocols |
+| 2 | 2026-07-14 | CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance-for-corvid-ai: Adopt SpecSync 5.0.1 and Trust 1.0.0 governance for corvid-ai |
+| 3 | 2026-07-14 | CHG-0004-make-the-four-existing-corvid-ai-public-api-tables-parser-complete-without-chang: Make the four existing corvid-ai public API tables parser-complete without changing their contracts |

@@ -4,12 +4,16 @@ spec: registry.spec.md
 
 ## Context
 
-<!-- Describe the context and motivation for this module. -->
+Provider selection needs a small, reviewable table that separates endpoint and
+credential metadata from the three reusable HTTP wire implementations.
 
 ## Related Modules
 
-- <!-- List related modules or specs. -->
+- `config` consumes registry rows during settings resolution.
+- `provider` implements each row's selected wire protocol.
 
 ## Design Decisions
 
-- <!-- Document key design decisions and their rationale. -->
+- Normalize user input during lookup rather than duplicating aliases.
+- Allow selected OpenAI-compatible rows to omit a default model so callers
+  make an explicit model choice.

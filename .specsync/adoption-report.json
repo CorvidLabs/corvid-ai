@@ -1,0 +1,30 @@
+{
+  "bootstrap_policy": {
+    "base_commit": "e18ff01dce558b5c6f51dd2673daa15282a79dc8",
+    "digest": "60f4daa45898deb8dd8e2e13c1b50cea62ece0d84fb8e188c29b74668c0f2bc6",
+    "path": ".specsync/sdd.json"
+  },
+  "generated_at": 1783883425,
+  "requirements_needing_ids": [
+    {
+      "action": "review and assign one stable ID per durable requirement",
+      "path": "specs/config/requirements.md",
+      "suggested_first_id": "REQ-config-001"
+    },
+    {
+      "action": "review and assign one stable ID per durable requirement",
+      "path": "specs/provider/requirements.md",
+      "suggested_first_id": "REQ-provider-001"
+    },
+    {
+      "action": "review and assign one stable ID per durable requirement",
+      "path": "specs/registry/requirements.md",
+      "suggested_first_id": "REQ-registry-001"
+    },
+    {
+      "action": "review and assign one stable ID per durable requirement",
+      "path": "specs/error/requirements.md",
+      "suggested_first_id": "REQ-error-001"
+    }
+  ]
+}

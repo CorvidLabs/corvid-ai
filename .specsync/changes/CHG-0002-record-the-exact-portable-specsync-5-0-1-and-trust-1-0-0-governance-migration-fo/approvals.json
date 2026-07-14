@@ -1,0 +1,61 @@
+{
+  "approvals": [
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1784003459,
+      "digest": "707d8f91e5b52f8f3bf1fda940624425b4b4e77ddb0d834f99f4e5858805c3b8",
+      "note": "Definition approved for this migration-only rollout after exact source and contract inventory."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1784003822,
+      "digest": "08e2be04b7d785824044a1aeec76a0ec1d1342ef4189dc1c9c78381801d2b059",
+      "note": "Closing approval after native verification and exact requirement evidence passed."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1784003867,
+      "digest": "45611932889d284300445e8bf1aeee4775a741bfa7d91f7f032d3b224ee9cc00",
+      "note": "Fresh closing approval after native verification on the final accepted contract."
+    }
+  ],
+  "reopenings": [
+    {
+      "schema_version": 1,
+      "change_id": "CHG-0002-record-the-exact-portable-specsync-5-0-1-and-trust-1-0-0-governance-migration-fo",
+      "actor": "user:0xLeif",
+      "reason": "Later accepted canonical coverage changes updated the final delivery inputs and require fresh native evidence.",
+      "timestamp": 1784003866,
+      "from_state": "accepted",
+      "to_state": "verifying",
+      "superseded_approval": {
+        "gate": "acceptance",
+        "actor": "user:0xLeif",
+        "timestamp": 1784003822,
+        "digest": "08e2be04b7d785824044a1aeec76a0ec1d1342ef4189dc1c9c78381801d2b059",
+        "note": "Closing approval after native verification and exact requirement evidence passed."
+      },
+      "prior_verification": {
+        "timestamp": 1784003813,
+        "commit": "d8a5f794531105eb75b0c4e836794fb11e6aea0c",
+        "contract_digest": "707d8f91e5b52f8f3bf1fda940624425b4b4e77ddb0d834f99f4e5858805c3b8",
+        "workspace_digest": "daf0d54c856700ae83d3fb378484bd13ebf2575f78c379be28d8f6570a05deab",
+        "acceptance_input_digest": "129ebf88213fc161c42bd0ccbbabc0605be57e70f219d71c07085bd090801509",
+        "passed": true,
+        "commands": [
+          {
+            "command": "fledge lanes run verify",
+            "success": true,
+            "exit_code": 0
+          }
+        ],
+        "requirement_ids": []
+      },
+      "stale_acceptance_input_digest": "129ebf88213fc161c42bd0ccbbabc0605be57e70f219d71c07085bd090801509",
+      "current_acceptance_input_digest": "d758ea0cb93aaa34a9857f62f9ffc72505cd0c22cdd3b9604ceceeff6a013226"
+    }
+  ]
+}

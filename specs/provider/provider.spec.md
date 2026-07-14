@@ -1,6 +1,6 @@
 ---
 module: provider
-version: 1
+version: 3
 status: active
 files:
   - src/provider.rs
@@ -23,25 +23,31 @@ without a network.
 
 ## Public API
 
-### Structs & Enums
+### Exported Types
 
 | Type | Description |
 |------|-------------|
 | `Provider` | Resolved target. Variants: `Anthropic`, `OpenAiCompatible` (key optional), `Gemini` |
 | `Completion` | A prompt plus optional system text and a `max_tokens` ceiling |
 
-### Functions
+### Exported Functions and Methods
 
 | Function | Signature | Description |
 |----------|-----------|-------------|
-| `Completion::new` | `(impl Into<String>) -> Completion` | Build a completion with default `max_tokens` |
-| `Completion::system` | `(self, impl Into<String>) -> Completion` | Builder: set system text |
-| `Completion::max_tokens` | `(self, u32) -> Completion` | Builder: set the token ceiling |
-| `Provider::complete` | `(&self, &Completion, Duration) -> Result<String>` | Send one completion, return concatenated text |
-| `Provider::model` | `(&self) -> &str` | The model id this provider uses |
-| `Provider::kind` | `(&self) -> &'static str` | Wire-protocol name: `anthropic`, `openai`, `gemini` |
+| `new` | `(impl Into<String>) -> Completion` | `Completion` constructor with default `max_tokens` |
+| `system` | `(self, impl Into<String>) -> Completion` | `Completion` builder: set system text |
+| `max_tokens` | `(self, u32) -> Completion` | `Completion` builder: set the token ceiling |
+| `complete` | `(&self, &Completion, Duration) -> Result<String>` | `Provider` method: send one completion and concatenate text |
+| `model` | `(&self) -> &str` | `Provider` method: return the selected model id |
+| `kind` | `(&self) -> &'static str` | `Provider` method: return `anthropic`, `openai`, or `gemini` |
+| `anthropic_body` | `(&str, &Completion) -> Value` | Crate-visible pure Anthropic request builder |
+| `parse_anthropic` | `(&str, &str) -> Result<String>` | Crate-visible pure Anthropic response parser |
+| `openai_body` | `(&str, &Completion) -> Value` | Crate-visible pure OpenAI-compatible request builder |
+| `parse_openai` | `(&str, &str) -> Result<String>` | Crate-visible pure OpenAI-compatible response parser |
+| `gemini_body` | `(&Completion) -> Value` | Crate-visible pure Gemini request builder |
+| `parse_gemini` | `(&str, &str) -> Result<String>` | Crate-visible pure Gemini response parser |
 
-### Constants
+### Exported Constants
 
 | Const | Description |
 |-------|-------------|
@@ -91,3 +97,5 @@ Then no Authorization header is sent and the request still succeeds against a ke
 | Version | Date | Changes |
 |---------|------|---------|
 | 1 | 2026-06-07 | Initial spec: three wire shapes, pure body/parse split, keyless OpenAI-compatible support |
+| 2 | 2026-07-14 | CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance-for-corvid-ai: Adopt SpecSync 5.0.1 and Trust 1.0.0 governance for corvid-ai |
+| 3 | 2026-07-14 | CHG-0004-make-the-four-existing-corvid-ai-public-api-tables-parser-complete-without-chang: Make the four existing corvid-ai public API tables parser-complete without changing their contracts |

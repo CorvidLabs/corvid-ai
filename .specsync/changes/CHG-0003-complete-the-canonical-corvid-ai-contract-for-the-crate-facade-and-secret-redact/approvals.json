@@ -1,0 +1,19 @@
+{
+  "approvals": [
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1784003459,
+      "digest": "9c9809d184643d95a50b48769077d7d50719f44a39db0b251f2e0a928b623281",
+      "note": "Definition approved for this migration-only rollout after exact source and contract inventory."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1784003822,
+      "digest": "c6ffd610100f4aa458071d9d441a318f2f8075ab792f65435cb1ce892ab982bd",
+      "note": "Closing approval after native verification and exact requirement evidence passed."
+    }
+  ],
+  "reopenings": []
+}

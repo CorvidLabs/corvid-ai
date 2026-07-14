@@ -1,6 +1,6 @@
 ---
 module: config
-version: 1
+version: 3
 status: active
 files:
   - src/config.rs
@@ -30,28 +30,27 @@ TOML/JSON config.
 |--------|-------------|
 | `resolve` | Resolve `Settings` into a `(Provider, Duration)` |
 
-### Structs & Enums
+### Exported Types
 
 | Type | Description |
 |------|-------------|
 | `Settings` | Loose config: `provider`, `model`, `api_key`, `base_url`, `timeout_secs` (all optional) |
 
-### Constants
+### Exported Constants
 
 | Const | Description |
 |-------|-------------|
 | `DEFAULT_PROVIDER` | Provider name used when `Settings::provider` is unset (`anthropic`) |
 | `DEFAULT_TIMEOUT_SECS` | Default request timeout in seconds (600) |
 
-### Functions
+### Exported Builder Methods
 
 | Function | Signature | Description |
 |----------|-----------|-------------|
-| `Settings::provider` | `(impl Into<String>) -> Settings` | Start from a provider name |
-| `Settings::model` | `(self, impl Into<String>) -> Settings` | Builder: set model |
-| `Settings::api_key` | `(self, impl Into<String>) -> Settings` | Builder: set key |
-| `Settings::base_url` | `(self, impl Into<String>) -> Settings` | Builder: set base URL |
-| `resolve` | `(&Settings) -> Result<(Provider, Duration)>` | Apply precedence and build a provider |
+| `provider` | `(impl Into<String>) -> Settings` | `Settings` constructor from a provider name |
+| `model` | `(self, impl Into<String>) -> Settings` | `Settings` builder: set model |
+| `api_key` | `(self, impl Into<String>) -> Settings` | `Settings` builder: set key |
+| `base_url` | `(self, impl Into<String>) -> Settings` | `Settings` builder: set base URL |
 
 ## Invariants
 
@@ -100,3 +99,5 @@ Then it returns Error::MissingModel (openai has no built-in default)
 | Version | Date | Changes |
 |---------|------|---------|
 | 1 | 2026-06-07 | Initial spec: precedence order and key requirements per protocol |
+| 2 | 2026-07-14 | CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance-for-corvid-ai: Adopt SpecSync 5.0.1 and Trust 1.0.0 governance for corvid-ai |
+| 3 | 2026-07-14 | CHG-0004-make-the-four-existing-corvid-ai-public-api-tables-parser-complete-without-chang: Make the four existing corvid-ai public API tables parser-complete without changing their contracts |

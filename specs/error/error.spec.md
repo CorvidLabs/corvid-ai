@@ -1,6 +1,6 @@
 ---
 module: error
-version: 1
+version: 3
 status: active
 files:
   - src/error.rs
@@ -20,17 +20,17 @@ useful message, without ever leaking an API key.
 
 ## Public API
 
-### Structs & Enums
+### Exported Types
 
 | Type | Description |
 |------|-------------|
 | `Error` | Typed error enum (via `thiserror`) for resolution and request failures |
 
-### Type Aliases
+### Exported Type Aliases
 
 | Alias | Description |
 |-------|-------------|
-| `Result<T>` | `std::result::Result<T, Error>` |
+| `Result` | `std::result::Result<T, Error>` |
 
 ### Error Variants
 
@@ -79,3 +79,5 @@ Then the rendered message shows "Bearer [REDACTED]"
 | Version | Date | Changes |
 |---------|------|---------|
 | 1 | 2026-06-07 | Initial spec: seven typed variants, key-safe Display |
+| 2 | 2026-07-14 | CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance-for-corvid-ai: Adopt SpecSync 5.0.1 and Trust 1.0.0 governance for corvid-ai |
+| 3 | 2026-07-14 | CHG-0004-make-the-four-existing-corvid-ai-public-api-tables-parser-complete-without-chang: Make the four existing corvid-ai public API tables parser-complete without changing their contracts |
