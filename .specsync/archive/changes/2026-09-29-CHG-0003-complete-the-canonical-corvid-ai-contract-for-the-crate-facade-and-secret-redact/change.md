@@ -1,0 +1,35 @@
+---
+id: CHG-0003-complete-the-canonical-corvid-ai-contract-for-the-crate-facade-and-secret-redact
+state: archived
+type: documentation
+base_commit: d8a5f794531105eb75b0c4e836794fb11e6aea0c
+---
+
+# Complete the canonical corvid-ai contract for the crate facade and secret redaction module
+
+## Intent
+
+Complete the canonical corvid-ai contract for the crate facade and secret redaction module
+
+## Affected Canonical Specs
+
+- `crate-api`
+- `redaction`
+
+## Acceptance Criteria
+
+- The crate facade and redaction modules have complete active specs; stable requirements map to existing Rust tests and doctests; released SpecSync 5.0.1 reports six of six Rust files and 100% file coverage; no Rust source bytes change
+
+## No-spec Rationale
+
+Not applicable
+
+## Migration Note
+
+Migrated by hand to SpecSync 6 per Leif's decision (2026-09-28); the 6.0.0 tool refused to archive this legacy record (`` legacy accepted change `CHG-0003-complete-the-canonical-corvid-ai-contract-for-the-crate-facade-and-secret-redact` requires exactly one distinct valid historical reconstruction, found 0; first reconstruction failure: legacy accepted change `CHG-0003-complete-the-canonical-corvid-ai-contract-for-the-crate-facade-and-secret-redact` cannot reproduce its signed raw-content aggregate ``).
+
+- Workflow v1 (SpecSync 5) record, accepted on 2026-07-14 by the closing approval already stored in `approvals.json`. SpecSync 6.0.0 reports its accepted evidence as stale, for the reason quoted above.
+- Moved by hand from `.specsync/changes/CHG-0003-complete-the-canonical-corvid-ai-contract-for-the-crate-facade-and-secret-redact/` into the layout `specsync change archive` writes: `accepted-state.json` is the unchanged accepted `state.json`, `state.json` is marked `archived`, and this file's front matter says `archived`.
+- `approvals.json`, `verification.json`, `verification-attempts.json` and every other artifact are the original SpecSync 5 evidence, unchanged. `verification.json` verifies commit `d8a5f794531105eb75b0c4e836794fb11e6aea0c`, not the tree this record was archived from.
+- This migration added no verification evidence, test result, attempt history, or approval. It is a manual migration, not a fresh re-verification.
+- Closing it through the tool takes `specsync change reopen`, `specsync change verify`, then `specsync change accept`, which writes a new closing approval. Per Leif's decision it was archived by hand instead, so no reopen or new approval is recorded.
