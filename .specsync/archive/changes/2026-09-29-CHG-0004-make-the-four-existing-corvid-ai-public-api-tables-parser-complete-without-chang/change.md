@@ -1,6 +1,6 @@
 ---
 id: CHG-0004-make-the-four-existing-corvid-ai-public-api-tables-parser-complete-without-chang
-state: accepted
+state: archived
 type: documentation
 base_commit: d8a5f794531105eb75b0c4e836794fb11e6aea0c
 ---
